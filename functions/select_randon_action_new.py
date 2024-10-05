@@ -34,7 +34,6 @@ async def select_random_action(controller: Controller, controller2: Controller, 
         if usdc_balance.Wei:
             possible_actions += [
                 controller.aerodrom.usdc_to_eth,
-                controller.uniswap.usdc_to_eth,
             ]
             weights += [1, 1, ]
 
@@ -47,14 +46,12 @@ async def select_random_action(controller: Controller, controller2: Controller, 
         if axlusdc_balance.Wei:
             possible_actions += [
                 controller.swapbased.axlusdc_to_eth,
-                controller.uniswap.axlusdc_to_eth,
             ]
             weights += [1, 1]
 
         if usdbc_balance.Wei:
             possible_actions += [
                 controller.swapbased.usdbc_to_eth,
-                controller.uniswap.usdbc_to_eth,
             ]
             weights += [1, 1]
 

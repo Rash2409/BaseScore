@@ -72,7 +72,7 @@ async def initial():
                 continue
 
             if action == 'Insufficient balance':
-                logger.error(f'{wallet.address}: Insufficient balance')
+                logger.error(f'{wallet.address}: Недостаточно баланса, пополните кошелек')
                 continue
 
             if action.__name__.startswith(
