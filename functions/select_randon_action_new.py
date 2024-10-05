@@ -35,7 +35,7 @@ async def select_random_action(controller: Controller, controller2: Controller, 
             possible_actions += [
                 controller.aerodrom.usdc_to_eth,
             ]
-            weights += [1, 1, ]
+            weights += [1, ]
 
         if usdc_balance.Wei and arbeth_balance.Wei:
             possible_actions += [
@@ -47,13 +47,13 @@ async def select_random_action(controller: Controller, controller2: Controller, 
             possible_actions += [
                 controller.swapbased.axlusdc_to_eth,
             ]
-            weights += [1, 1]
+            weights += [1,]
 
         if usdbc_balance.Wei:
             possible_actions += [
                 controller.swapbased.usdbc_to_eth,
             ]
-            weights += [1, 1]
+            weights += [1,]
 
         if arbusdc_balance.Wei > TokenAmount(1.7, decimals=6).Wei and arbeth_balance.Wei:
             possible_actions += [
