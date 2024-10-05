@@ -106,7 +106,7 @@ async def initial():
                 status = await action()
 
             else:
-                status = await action(amount=TokenAmount(0.0005))
+                status = await action(amount=TokenAmount(0.00005))
 
             if 'failed' not in status:
                 wallet.next_initial_action_time = now + timedelta(

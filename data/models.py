@@ -53,6 +53,8 @@ class Settings(Singleton, AutoRepr):
 
         self.maximum_gas_price: int = json_data['maximum_gas_price']
 
+        self.minimal_balance: float = json_data['minimal_balance']
+
         self.initial_actions_delay: FromTo = FromTo(
             from_=json_data['initial_actions_delay']['from'], to_=json_data['initial_actions_delay']['to']
         )

@@ -1,18 +1,16 @@
-import time
-import asyncio
 import random
 from web3.types import TxParams
-from web3 import Web3
 from loguru import logger
 from tasks.base import Base
-from libs.eth_async.data.models import TxArgs, TokenAmount
+from libs.eth_async.data.models import TokenAmount
 from data.models import Contracts
 import asyncio
 import aiohttp
-from web3 import Web3
 
 
 class Owlto(Base):
+
+    API_URL = ' https://owlto.finance/api/bridge_api/v1/'
 
     async def send_tx_to_arb(self, amount: TokenAmount | None = None):
 
@@ -68,6 +66,9 @@ class Owlto(Base):
         }
 
         async with aiohttp.ClientSession() as session:
+
+            API_URL = 'https://owlto.finance/api/bridge_api/v1/'
+
             async with session.post(API_URL + "get_build_tx", json=payload,
                                     headers={"Content-Type": "application/json"}) as response:
                 data = await response.json()
@@ -127,6 +128,7 @@ class Owlto(Base):
         }
 
         async with aiohttp.ClientSession() as session:
+            API_URL = 'https://owlto.finance/api/bridge_api/v1/'
             async with session.post(API_URL + "get_build_tx", json=payload,
                                     headers={"Content-Type": "application/json"}) as response:
                 data = await response.json()

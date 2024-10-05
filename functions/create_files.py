@@ -34,6 +34,7 @@ def create_files():
                 'passphrase': '',
             }
         },
+        'minimal_balance': 0.001,
         'initial_actions_delay': {'from': 3600, 'to': 14400},
         'eth_amount_for_swap': {'from': 0.0001, 'to': 0.0008},
         'eth_amount_for_aave': {'from': 0.0001, 'to': 0.0008},

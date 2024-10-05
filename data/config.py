@@ -13,8 +13,6 @@ if getattr(sys, 'frozen', False):
 else:
     ROOT_DIR = Path(__file__).parent.parent.absolute()
 
-PRIVATE_KEY = str(os.getenv('PRIVATE_KEY'))
-
 ABIS_DIR = os.path.join(ROOT_DIR, 'data', 'abis')
 FILES_DIR = os.path.join(ROOT_DIR, 'files')
 
